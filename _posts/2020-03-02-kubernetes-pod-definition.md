@@ -54,5 +54,43 @@ spec:
 # Basic replication controller commands:
 - kubectl create -f replicationcontroller-definition.yml
 - kubectl get replicationcontrollers
-- kubectl get rc
+- kubectl get rc # short form for replicationcontroller
 - kubctl delete  replicationcontroller/nginx-rc
+
+
+# Structure of replicaset-definition.yml:
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+   name: demo-replicaset
+   labels:
+      app: demo-app
+      type: front-end
+spec:
+   template:
+      metadata:
+         name: demo-pod
+         labels:
+            app: demo-app
+            type: front-end
+      spec:
+         containers:
+            - name: nginx-container
+              image: nginx
+   replicas: 3
+   selector:
+      matchLabels:
+         type: front-end
+```
+
+# Basic commands for replicaset:
+- kubectl create -f replicatset-definition.yml
+- kubectl replace -f replicatset-definition.yml  #replace the existing replicaset
+- kubectl scale --replicas=6 -f replicaset-definition.yml #scale up the replica to 6.
+*Notes: the above command will not change replicaset insde the replicaset-definition.yml file*
+- kubectl scale --replicas=6 replicaset demo-replicaset
+- kubectl get rs
+- kubectl edit rs demo-replicaset
+- kubectl delete replicaset demo-replicaset # that will delete replicaset and all the underlying pods
+- kubectl delete rs demo-replicaset #short form of replicaset
