@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "Basic Helm Commands"
-categories: "kubernetes services"
+categories: "kubernetes helm"
 permalink: "/:categories/:year/:month/:day/:title.html"
 ---
 
