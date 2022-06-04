@@ -6,7 +6,7 @@ permalink: "/:categories/:year/:month/:day/:title.html"
 ---
 
 This program tests the performance of ArrayList vs LinkedList by adding elements at beginning of the list:
-```
+``` java
 import java.util.ArrayList;
 import java.util.LinkedList;
 
