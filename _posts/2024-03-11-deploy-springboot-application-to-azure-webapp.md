@@ -72,3 +72,8 @@ Deploy Spring Boot application to Azure Web App:
 mvn package azure-webapp:deploy
 ```
 
+
+Reference:
+==========
+<https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md>
+
